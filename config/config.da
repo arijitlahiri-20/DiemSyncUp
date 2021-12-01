@@ -61,19 +61,21 @@ configs = [
         'nclientops': 7,
         'sleeptime': 1,
         'clienttimeout': 10,
-        'delta': 2,
+        'delta': 0.5,
         'window_size': 5,
         'exclude_size': 1,
         'failure_config': FailureConfig(
             failures=[
                  Failure(src='_', dest=3, msg_type=MsgType.Proposal,
+                        round=1, prob=1, fail_type=FailType.MsgLoss, val=None, attr=None),
+                Failure(src='_', dest=3, msg_type=MsgType.Proposal,
                         round=2, prob=1, fail_type=FailType.MsgLoss, val=None, attr=None),
                 Failure(src='_', dest=3, msg_type=MsgType.Proposal,
                         round=3, prob=1, fail_type=FailType.MsgLoss, val=None, attr=None),
                 Failure(src='_', dest=2, msg_type=MsgType.Proposal,
-                        round=4, prob=1, fail_type=FailType.MsgLoss, val=None, attr=None),
-                Failure(src='_', dest=2, msg_type=MsgType.Proposal,
                         round=5, prob=1, fail_type=FailType.MsgLoss, val=None, attr=None),
+                Failure(src='_', dest=2, msg_type=MsgType.Proposal,
+                        round=6, prob=1, fail_type=FailType.MsgLoss, val=None, attr=None),
             ],
             seed=637713655
         )

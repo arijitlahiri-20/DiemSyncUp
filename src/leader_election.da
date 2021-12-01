@@ -27,12 +27,15 @@ class LeaderElection:
                         self.reputation_leaders[round])
             LOGGER.log("Leader election is Done successfully", None)
             '''return leader // Reputation-based leader'''
+            # print("##### Round ", round, "------ Leader ---", self.reputation_leaders[round])
             return self.reputation_leaders[round]
         LOGGER.log('LeaderElection: get_leader: returns by round robin', ((
             round)//2) % len(self.replicas), self.replicas[((round)//2) % len(self.replicas)])
         LOGGER.log("Leader election is Done successfully", None)
         '''return validators[floor(round//2) mod |validators|] // Round-robin leader (two rounds per leader)'''
+        # print("##### Round ", round, "------ Leader ---", self.reputation_leaders[round])
         return self.replicas[((round)//2) % len(self.replicas)]
+        # return self.replicas[2]
 
     '''Procedure update leaders(qc)'''
     def update_leaders(self, qc):
